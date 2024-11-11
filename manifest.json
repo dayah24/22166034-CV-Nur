@@ -2,7 +2,7 @@
     "name": "Nur Hidayah Portfolio",
     "short_name": "Portfolio",
     "description": "Portfolio website of Nur Hidayah",
-    "start_url": "/Portofolio-Hidayah/index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
