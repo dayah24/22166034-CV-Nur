@@ -113,6 +113,6 @@ self.addEventListener('message', (event) => {
 self.addEventListener('notificationclick', event => {
     event.notification.close(); // Menutup notifikasi saat diklik
     event.waitUntil(
-        clients.openWindow('https://dayah24.github.io/portfolio-hidayah/')
+        clients.openWindow('https://dayah24.github.io/22166034-CV-Nur-Hidayah-PWA/')
     );
 });
