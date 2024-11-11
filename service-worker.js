@@ -114,6 +114,6 @@ self.addEventListener('message', (event) => {
 self.addEventListener('notificationclick', event => {
     event.notification.close(); // Menutup notifikasi saat diklik
     event.waitUntil(
-        clients.openWindow('https://github.com/dayah24/Portofolio-PWA/')
+        clients.openWindow('https://dayah24.github.io/Portofolio-Hidayah/')
     );
 });
