@@ -1,4 +1,4 @@
-const cacheName = 'portfolio-cache-v3';
+const cacheName = 'portfolio-cache-v4'; // Increment to force update
 const assets = [
     "/portfolio-hidayah/",
     "/portfolio-hidayah/index.html",
