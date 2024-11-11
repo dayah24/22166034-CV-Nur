@@ -49,7 +49,7 @@ self.addEventListener('fetch', (event) => {
             });
         }).catch(() => {
             console.log('Service Worker: Fetch failed, returning offline page');
-            return caches.match('/index.html');
+            return caches.match('/Portofolio-Hidayah/index.html');
         })
     );
 });
@@ -92,7 +92,7 @@ function showNotification() {
     const title = 'Hallo';
     const options = {
         body: 'Selamat Datang di Web Portofolio Nur Hidayah. Terimakasih telah mengunjungi',
-        icon: '/image/icon-192x192.png'
+        icon: '/Portofolio-Hidayah/icon-192x192.png'
     };
 
     // Pastikan registration tersedia sebelum menampilkan notifikasi
