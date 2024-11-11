@@ -1,4 +1,4 @@
-const cacheName = 'portfolio-cache-v4'; // Increment to force update
+const cacheName = 'portfolio-cache-v4'; // Ganti versi cache ini jika ingin memaksa pembaruan
 const assets = [
     "/portfolio-hidayah/",
     "/portfolio-hidayah/index.html",
@@ -37,8 +37,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
             return cachedResponse || fetch(event.request).then((networkResponse) => {
+                // Pastikan respons jaringan valid sebelum menambahkannya ke cache
                 if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-                    console.log('Service Worker: Invalid network response', networkResponse);
                     return networkResponse;
                 }
 
@@ -48,13 +48,13 @@ self.addEventListener('fetch', (event) => {
                 });
             });
         }).catch(() => {
-            console.log('Service Worker: Fetch failed, returning offline page');
-            return caches.match('/Portofolio-Hidayah/index.html');
+            // Menampilkan halaman offline jika fetch gagal dan cache tidak ada
+            return caches.match('/portfolio-hidayah/index.html');
         })
     );
 });
 
-// Activate event untuk membersihkan cache lama dan menampilkan notifikasi saat aktivasi
+// Activate event untuk membersihkan cache lama
 self.addEventListener('activate', (event) => {
     console.log('Service Worker: Activating...');
 
@@ -65,7 +65,6 @@ self.addEventListener('activate', (event) => {
             );
         }).then(() => {
             self.clients.claim();
-            showNotification(); // Tampilkan notifikasi saat Service Worker diaktifkan
         })
     );
 });
@@ -92,7 +91,7 @@ function showNotification() {
     const title = 'Hallo';
     const options = {
         body: 'Selamat Datang di Web Portofolio Nur Hidayah. Terimakasih telah mengunjungi',
-        icon: '/Portofolio-Hidayah/icon-192x192.png'
+        icon: '/portfolio-hidayah/icon-192x192.png'
     };
 
     // Pastikan registration tersedia sebelum menampilkan notifikasi
@@ -114,6 +113,6 @@ self.addEventListener('message', (event) => {
 self.addEventListener('notificationclick', event => {
     event.notification.close(); // Menutup notifikasi saat diklik
     event.waitUntil(
-        clients.openWindow('https://dayah24.github.io/Portofolio-Hidayah/')
+        clients.openWindow('https://dayah24.github.io/portfolio-hidayah/')
     );
 });
