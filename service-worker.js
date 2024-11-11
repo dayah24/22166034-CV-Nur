@@ -1,13 +1,13 @@
 const cacheName = 'portfolio-cache-v3';
 const assets = [
-    "/",
-    "/index.html",
-    "/style.css",
-    "/app.js",
-    "/manifest.json",
-    "/image/image.jpg",
-    "/image/icon-192x192.png",
-    "/image/icon-512x512.png",
+    "/portfolio-hidayah/",
+    "/portfolio-hidayah/index.html",
+    "/portfolio-hidayah/style.css",
+    "/portfolio-hidayah/app.js",
+    "/portfolio-hidayah/manifest.json",
+    "/portfolio-hidayah/image.jpg",
+    "/portfolio-hidayah/icon-192x192.png",
+    "/portfolio-hidayah/icon-512x512.png",
 ];
 
 // Install event untuk cache semua assets
