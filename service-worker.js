@@ -1,4 +1,4 @@
-const cacheName = 'portfolio-cache-v4'; // Ganti versi cache ini jika ingin memaksa pembaruan
+const cacheName = 'portofolio-cache-v4'; // Ganti versi cache ini jika ingin memaksa pembaruan
 const assets = [
     "/portfolio-hidayah/",
     "/portfolio-hidayah/index.html",
