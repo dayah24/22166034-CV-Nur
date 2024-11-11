@@ -223,18 +223,3 @@ if ('Notification' in window) {
 } else {
     console.log('Browser tidak mendukung Notification API.');
 }
-
-    // Fetch Manifest
-    fetch('/manifest.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Manifest not found');
-            return response.json();
-        })
-        .then(data => {
-            console.log('Manifest loaded:', data);
-        })
-        .catch(error => {
-            console.error('Error loading manifest:', error);
-        });
-});
-
