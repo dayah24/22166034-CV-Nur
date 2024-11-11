@@ -1,13 +1,13 @@
 const cacheName = 'portofolio-cache-v4'; // Ganti versi cache ini jika ingin memaksa pembaruan
 const assets = [
-    "/Portofolio-Hidayah/",
-    "/Portofolio-Hidayah/index.html",
-    "/Portofolio-Hidayah/style.css",
-    "/Portofolio-Hidayah/app.js",
-    "/Portofolio-Hidayah/manifest.json",
-    "/Portofolio-Hidayah/image.jpg",
-    "/Portofolio-Hidayah/icon-192x192.png",
-    "/Portofolio-Hidayah/icon-512x512.png",
+    "/22166034-CV-Nur-Hidayah-PWA/",
+    "/22166034-CV-Nur-Hidayah-PWA/index.html",
+    "/22166034-CV-Nur-Hidayah-PWA/style.css",
+    "/22166034-CV-Nur-Hidayah-PWA/app.js",
+    "/22166034-CV-Nur-Hidayah-PWA/manifest.json",
+    "/22166034-CV-Nur-Hidayah-PWA/image.jpg",
+    "/22166034-CV-Nur-Hidayah-PWA/icon-192x192.png",
+    "/22166034-CV-Nur-Hidayah-PWA/icon-512x512.png",
 ];
 
 // Install event untuk cache semua assets
@@ -91,7 +91,7 @@ function showNotification() {
     const title = 'Hallo';
     const options = {
         body: 'Selamat Datang di Web Portofolio Nur Hidayah. Terimakasih telah mengunjungi',
-        icon: '/Portofolio-Hidayah/icon-192x192.png'
+        icon: '/22166034-CV-Nur-Hidayah-PWA/icon-192x192.png'
     };
 
     // Pastikan registration tersedia sebelum menampilkan notifikasi
