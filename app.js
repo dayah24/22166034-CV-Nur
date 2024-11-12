@@ -110,20 +110,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // Install App Event
     let deferredPrompt;
 
-    window.addEventListener('beforeinstallprompt', (event) => {
-        event.preventDefault();
-        deferredPrompt = event;
-    
-        if (installButton) {
-            installButton.style.display = 'block';
-            installButton.addEventListener('click', async () => {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                deferredPrompt = null;
-                installButton.style.display = 'none';
-            });
-        }
+    // Tampilkan tombol install jika event beforeinstallprompt terpicu
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Mencegah Chrome langsung menampilkan prompt
+    e.preventDefault();
+    // Simpan event sehingga dapat dipicu nanti
+    deferredPrompt = e;
+    // Tampilkan tombol install
+    installButton.style.display = 'block';
+
+    installButton.addEventListener('click', () => {
+        // Sembunyikan tombol install setelah diklik
+        installButton.style.display = 'none';
+        // Tampilkan prompt pemasangan
+        deferredPrompt.prompt();
+        // Tunggu hingga pengguna merespons prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+        });
     });
+});
 
     navigator.serviceWorker.addEventListener('message', (event) => {
         if (event.data && event.data.action === 'showInstallButton') {
