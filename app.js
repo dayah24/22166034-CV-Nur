@@ -120,19 +120,16 @@ window.addEventListener('beforeinstallprompt', (e) => {
     installButton.style.display = 'block';
 
     installButton.addEventListener('click', () => {
-        // Sembunyikan tombol install setelah diklik
-        installButton.style.display = 'none';
-        // Tampilkan prompt pemasangan
-        deferredPrompt.prompt();
-        // Tunggu hingga pengguna merespons prompt
-        deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the A2HS prompt');
-            } else {
-                console.log('User dismissed the A2HS prompt');
-            }
-            deferredPrompt = null;
-        });
+    // Jangan sembunyikan tombol install, biarkan tetap terlihat
+    deferredPrompt.prompt();
+    // Tunggu hingga pengguna merespons prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+        } else {
+            console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
     });
 });
 
